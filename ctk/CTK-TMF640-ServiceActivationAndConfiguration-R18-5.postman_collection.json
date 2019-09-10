@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "aec1235e-50c9-44b5-a05b-5962a6810437",
+		"_postman_id": "ddec4eee-adaf-41f7-b246-d2d417524f98",
 		"name": "CTK-TMF640-ServiceActivationAndConfiguration-R18-5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1229,7 +1229,7 @@
 									"});",
 									"if (Array.isArray(jsonData)) {",
 									"  jsonData.forEach(function (instance, index) {",
-									"    var requiredAttributes = ['name', 'state'];",
+									"    var requiredAttributes = ['id', 'state'];",
 									"    pm.test('Instance has all mandatory attributes', function () { pm.expect(Object.keys(instance)).to.include.members(requiredAttributes) });",
 									"",
 									"    //We expect only 2 fields",
@@ -1237,8 +1237,7 @@
 									"    pm.test('Instance has only filtered attributes', function () { pm.expect(Object.keys(instance).length).to.eql(requiredAttributes.length) });",
 									"",
 									"    // Checking all remaining possible attributes for ServiceOrder, taken from the Swagger file",
-									"",
-									"    pm.test('Response has name attribute', function () { pm.expect(instance.name).to.be.a('string'); });",
+									"    pm.test('Response has id attribute', function () { pm.expect(instance.id).to.be.a('string') });",
 									"",
 									"    pm.test('Response has state attribute', function () { pm.expect(instance.state).to.be.a('string') });",
 									"",
@@ -1248,7 +1247,7 @@
 									"}",
 									"else {",
 									"  var instance = pm.response.json();",
-									"  var requiredAttributes = ['name', 'state'];",
+									"  var requiredAttributes = ['id', 'state'];",
 									"    pm.test('Instance has all mandatory attributes', function () { pm.expect(Object.keys(instance)).to.include.members(requiredAttributes) });",
 									"",
 									"    //We expect only 2 fields",
@@ -1256,8 +1255,7 @@
 									"    pm.test('Instance has only filtered attributes', function () { pm.expect(Object.keys(instance).length).to.eql(requiredAttributes.length) });",
 									"",
 									"    // Checking all remaining possible attributes for ServiceOrder, taken from the Swagger file",
-									"",
-									"    pm.test('Response has name attribute', function () { pm.expect(instance.name).to.be.a('string'); });",
+									"    pm.test('Response has id attribute', function () { pm.expect(instance.id).to.be.a('string') });",
 									"",
 									"    pm.test('Response has state attribute', function () { pm.expect(instance.state).to.be.a('string') });",
 									"",
@@ -1291,7 +1289,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{ServiceActivationAPI}}/service/?fields=name,state",
+							"raw": "{{ServiceActivationAPI}}/service/?fields=state",
 							"host": [
 								"{{ServiceActivationAPI}}"
 							],
@@ -1302,7 +1300,7 @@
 							"query": [
 								{
 									"key": "fields",
-									"value": "name,state"
+									"value": "state"
 								}
 							]
 						},
