@@ -1,6 +1,6 @@
 const readline = require('readline');
 const rp = require('request-promise');
-var DefaultURL = "http://api-service-activation-and-configuration-v4-0-0.mybluemix.net/tmf-api/ServiceActivationAndConfiguration/v4";
+var DefaultURL = "http://api-service-activation-and-configuration-v3-0-0.mybluemix.net/tmf-api/ServiceActivationAndConfiguration/v3";
 var schema;
 var hostname;
 var port;
@@ -115,7 +115,7 @@ function getURL(){
 function exportEnvironment(){
 
     var fs = require('fs');
-    var environmentFile = "CTK-TMFENV-V4.0.0.postman_environment.json";    
+    var environmentFile = "CTK-TMFENV-V3.0.0.postman_environment.json";    
     var content = fs.readFileSync(environmentFile, "utf8");
     var envJson = JSON.parse(content);
     envJson.name = "TMForumR18.5";
